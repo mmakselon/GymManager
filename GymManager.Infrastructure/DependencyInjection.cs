@@ -19,6 +19,6 @@ public static class DependencyInjection
     public static IApplicationBuilder UseInfrastructure(this IApplicationBuilder app)
     {
         //
-        return services;
+        return app;
     }
 }

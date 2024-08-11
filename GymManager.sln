@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymManager.UI", "GymManager.UI\GymManager.UI.csproj", "{755E64D1-7D47-43E1-90DE-23D960C97578}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GymManager.UI", "GymManager.UI\GymManager.UI.csproj", "{755E64D1-7D47-43E1-90DE-23D960C97578}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymManager.Domain", "GymManager.Domain\GymManager.Domain.csproj", "{46846B06-F8BF-40AD-8F21-FC572053D7C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymManager.Application", "GymManager.Application\GymManager.Application.csproj", "{9BB1BCAB-1666-465E-8C22-82D488FF6166}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymManager.Infrastructure", "GymManager.Infrastructure\GymManager.Infrastructure.csproj", "{D42BEA63-99D1-441A-AF6E-4303702EC7D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{755E64D1-7D47-43E1-90DE-23D960C97578}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{755E64D1-7D47-43E1-90DE-23D960C97578}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{755E64D1-7D47-43E1-90DE-23D960C97578}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46846B06-F8BF-40AD-8F21-FC572053D7C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46846B06-F8BF-40AD-8F21-FC572053D7C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46846B06-F8BF-40AD-8F21-FC572053D7C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46846B06-F8BF-40AD-8F21-FC572053D7C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BB1BCAB-1666-465E-8C22-82D488FF6166}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BB1BCAB-1666-465E-8C22-82D488FF6166}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BB1BCAB-1666-465E-8C22-82D488FF6166}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BB1BCAB-1666-465E-8C22-82D488FF6166}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D42BEA63-99D1-441A-AF6E-4303702EC7D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D42BEA63-99D1-441A-AF6E-4303702EC7D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D42BEA63-99D1-441A-AF6E-4303702EC7D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D42BEA63-99D1-441A-AF6E-4303702EC7D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
