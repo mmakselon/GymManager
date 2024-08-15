@@ -9,19 +9,20 @@ namespace GymManager.UI.Controllers
 {
     public class HomeController : BaseController
     {
-        /*
+        
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
-        */
+        
 
         public async Task<IActionResult> Index()
         {
-            //var ticket = await Mediatr.Send(new GetTicketByIdQuery { Id = 1 });
-            await Mediator.Send(new AddTicketCommand { Name = "Ticket 1" });
+
+            _logger.LogInformation("LogInformation");
+            _logger.LogError(new Exception("LogError"), null);
 
             return View();
         }
