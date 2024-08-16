@@ -1,8 +1,6 @@
 using GymManager.Application;
 using GymManager.Infrastructure;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
+using GymManager.UI.Extensions;
 using NLog.Web;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +13,8 @@ builder.Logging.AddNLogWeb();
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure();
 
+builder.Services.DefineViewLocation(builder.Configuration);
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
@@ -24,6 +24,16 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
+}
+
+var logger = app.Services.GetService<ILogger<Program>>();
+if (app.Environment.IsDevelopment())
+{
+    logger.LogInformation("DEVELOPMENT MODE");
+}
+else
+{
+    logger.LogInformation("PRODUCTION MODE");
 }
 
 app.UseHttpsRedirection();
