@@ -21,9 +21,6 @@ namespace GymManager.UI.Controllers
         public async Task<IActionResult> Index()
         {
 
-            _logger.LogInformation("LogInformation");
-            _logger.LogError(new Exception("LogError"), null);
-
             return View();
         }
 

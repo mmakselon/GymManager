@@ -1,6 +1,7 @@
 using GymManager.Application;
 using GymManager.Infrastructure;
 using GymManager.UI.Extensions;
+using GymManager.UI.Middlewares;
 using NLog.Web;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,6 +26,8 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
 }
+
+app.UseMiddleware<ExceptionHandlerMiddleware>();
 
 var logger = app.Services.GetService<ILogger<Program>>();
 if (app.Environment.IsDevelopment())
