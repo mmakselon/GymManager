@@ -20,6 +20,7 @@ namespace GymManager.UI.Controllers
 
         public async Task<IActionResult> Index()
         {
+            throw new Exception("Nieobs³u¿ony b³¹d!!!");
 
             return View();
         }
