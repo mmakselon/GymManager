@@ -11,21 +11,6 @@ builder.Logging.ClearProviders();
 builder.Logging.SetMinimumLevel(LogLevel.Information);
 builder.Logging.AddNLogWeb();
 
-var supportedCultures = new List<CultureInfo>
-{
-    new CultureInfo("pl"),
-    new CultureInfo("en")
-};
-
-CultureInfo.DefaultThreadCurrentCulture = supportedCultures[0];
-CultureInfo.DefaultThreadCurrentUICulture = supportedCultures[0];
-
-builder.Services.Configure<RequestLocalizationOptions>(options =>
-{
-    options.DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture(supportedCultures[0]);
-    options.SupportedCultures = supportedCultures;
-    options.SupportedUICultures = supportedCultures;
-});
 
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure();
