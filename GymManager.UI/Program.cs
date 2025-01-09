@@ -3,6 +3,7 @@ using GymManager.Infrastructure;
 using GymManager.UI.Extensions;
 using GymManager.UI.Middlewares;
 using NLog.Web;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,21 @@ builder.Logging.ClearProviders();
 builder.Logging.SetMinimumLevel(LogLevel.Information);
 builder.Logging.AddNLogWeb();
 
+var supportedCultures = new List<CultureInfo>
+{
+    new CultureInfo("pl"),
+    new CultureInfo("en")
+};
+
+CultureInfo.DefaultThreadCurrentCulture = supportedCultures[0];
+CultureInfo.DefaultThreadCurrentUICulture = supportedCultures[0];
+
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    options.DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture(supportedCultures[0]);
+    options.SupportedCultures = supportedCultures;
+    options.SupportedUICultures = supportedCultures;
+});
 
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure();
