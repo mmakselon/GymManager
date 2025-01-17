@@ -22,7 +22,7 @@ static class ModelBuilderExtensionsSettingsPosition
             new SettingsPosition
             {
                 Id = 2,
-                Key = SettingsDict.Port,
+                Key = SettingsDict.Port, 
                 Value = "587",
                 Description = "Port",
                 Type = Domain.Enums.SettingsType.Integer,
