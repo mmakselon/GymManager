@@ -14,13 +14,14 @@ builder.Logging.AddNLogWeb();
 builder.Services.AddCulture();
 
 builder.Services.AddApplication();
-builder.Services.AddInfrastructure();
+builder.Services.AddInfrastructure(builder.Configuration);
 
 builder.Services.DefineViewLocation(builder.Configuration);
 
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+
 app.UseInfrastructure();
 
 if (!app.Environment.IsDevelopment())
@@ -32,13 +33,14 @@ if (!app.Environment.IsDevelopment())
 app.UseMiddleware<ExceptionHandlerMiddleware>();
 
 var logger = app.Services.GetService<ILogger<Program>>();
+
 if (app.Environment.IsDevelopment())
 {
-    logger.LogInformation("DEVELOPMENT MODE");
+    logger.LogInformation("DEVELOPMENT MODE!!!");
 }
 else
 {
-    logger.LogInformation("PRODUCTION MODE");
+    logger.LogInformation("PRODUCTION MODE!!!");
 }
 
 app.UseHttpsRedirection();
